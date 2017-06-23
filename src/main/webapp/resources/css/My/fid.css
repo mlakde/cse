@@ -1,0 +1,76 @@
+
+
+	body{
+		/* background-color:4465AF; */
+	
+background: rgb(246,190,0); /* Old browsers */
+background: -moz-linear-gradient(-45deg, rgba(246,190,0,1) 0%, rgba(152,186,183,1) 35%, rgba(98,181,229,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg, rgba(246,190,0,1) 0%,rgba(152,186,183,1) 35%,rgba(98,181,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg, rgba(246,190,0,1) 0%,rgba(152,186,183,1) 35%,rgba(98,181,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6be00', endColorstr='#62b5e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		overflow:hidden;
+		
+		font-weight:bold;
+	}
+	.img-size{
+		width: 100%;
+		height: 100%;
+	}
+	.airline-img{
+		/* width:70%;  */
+		/* height:20%; */
+	}
+	.flightNo{
+		text-align:center;
+	}
+	.cell-bg{
+		/* background-color: 2B3990; */
+		color:white;
+		font-size:2.5em;
+		font-family:neosans-bold;
+		
+		
+	}
+	
+	#gateview th {
+		text-align:center;
+		background-color: #949A90;
+		font-family : neosans-regular;
+	 }
+	 #gateview td {
+		text-align:center;
+		padding: 1px;
+	 }
+	 .arrFrom{
+		text-align:left !important;
+	}
+	.cancelled{
+		color:red;
+	}
+	.separator{
+		font-family: neosans-bold;
+		font-weight: bold;
+		font-size: 2.5em;
+		background-color: #949A90 !important;
+height: 74px;
+		color:white;
+	}
+table.dataTable >thead th{
+border-bottom:1px solid #2058a8;
+}
+table.dataTable >tbody td {
+    text-align: center;
+    background-color:  #4188c4;
+/*     border-bottom:1px solid #2058a8; */
+}
+
+table.dataTable > tbody tr.odd td { 
+    background-color: #7baba7;
+     /*   border-bottom:1px solid #2058a8; */
+}
+.dataTables tbody tr {
+min-height: 10px; /* or whatever height you need to make them all consistent */
+}
+.padding-table{
+	margin-top:-8px !important;
+}

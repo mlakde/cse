@@ -1,0 +1,60 @@
+
+@font-face {
+    font-family: neosans-black;
+    src: url(/cse/resources/fonts/NeoSansStd-Black.woff) ;
+}
+@font-face {
+    font-family: neosans-bold;
+    /* src: url(/flighttracker/resources/fonts/NeoSansStd-Bold.otf); */
+     src: url(/cse/resources/fonts/NeoSansStd-Bold.woff);
+
+}
+
+@font-face {
+    font-family: neosans-light;
+    /* src: url(/flighttracker/resources/fonts/NeoSansStd-Light.otf) ; */
+    src: url(/cse/resources/fonts/NeoSansStd-Light.woff) ;
+}
+
+@font-face {
+    font-family: neosans-medium;
+/*     src: url(/flighttracker/resources/fonts/NeoSansStd-Medium.otf) ; */
+    src: url(/cse/resources/fonts/NeoSansStd-Medium.woff) ;
+}
+
+@font-face {
+    font-family: neosans-regular;
+    /* src: url(/flighttracker/resources/fonts/NeoSansStd-Regular.otf); */
+    src: url(/cse/resources/fonts/NeoSansStd-Regular.woff);
+}
+
+@font-face {
+    font-family: neosans-ultra;
+    /* src: url(/flighttracker/resources/fonts/NeoSansStd-Ultra.otf) ; */
+    src: url(/cse/resources/fonts/NeoSansStd-Ultra.woff) ;
+}
+
+@font-face {
+    font-family: Avenir-BlackOblique;
+    src: url(/cse/resources/fonts/Avenir/Avenir-BlackOblique.ttf) ;
+    /* src: url(/QFlowDashBoard/resources/fonts/NeoSansStd-Ultra.woff) ; */
+}
+
+@font-face {
+    font-family: Avenir-MediumOblique;
+    src: url(/cse/resources/fonts/Avenir/Avenir-MediumOblique.ttf) ;
+    /* src: url(/QFlowDashBoard/resources/fonts/NeoSansStd-Ultra.woff) ; */
+}
+
+@font-face {
+    font-family: Avenir-Black;
+    src: url(/cse/resources/fonts/Avenir/Avenir-Black.ttf) ;
+    /* src: url(/QFlowDashBoard/resources/fonts/NeoSansStd-Ultra.woff) ; */
+}
+
+@font-face {
+    font-family: Avenir-Medium;
+    src: url(/cse/resources/fonts/Avenir/Avenir-Medium.ttf) ;
+    /* src: url(/QFlowDashBoard/resources/fonts/NeoSansStd-Ultra.woff) ; */
+}
+

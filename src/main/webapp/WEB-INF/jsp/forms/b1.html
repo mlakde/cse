@@ -1,0 +1,405 @@
+
+
+	<div class="container" style="width: 100%;">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top:10px;width:100%;">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="margin-bottom:5px;margin-right:55px;">
+						<img  src="<%=request.getContextPath()%>/resources/images/LAWA_logo_Display.png" alt="LAWA" style="height:150px;width:400px; float: left;" >
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="text-align: center !important;  margin-top:20px;">
+						<label style="font-size: 24px;">LAX SECURITY BADGE APPLICATION</label><br /> 
+						<label style="font-size: 18px;">SENSITIVE SECURITY INFORMATION</label><br />
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+					</div>
+				</div>
+		</div>
+<!-- 	<form name="testForm" class="form-horizontal" role="form"  id="badge1">
+
+							 <div  class="col-sm-6"  ng-class="{ 'has-error' : myForm.birthCountry.$error.required}">
+								<label class=" control-label">Country Of Birth</label>
+									
+										<select class="form-control" name="birthCountry" data-ng-model="selectedBirthCountry" data-ng-options="country.countryDescription for country in countryList" required>
+										</select>
+									
+							</div>
+						<button type="button" data-ng-disabled="testForm.$invalid"
+				 data-ng-click="next(myForm)" class="btn btn-success btn-lg"> Next </button>
+	</form> -->
+		<form name="myForm" class="form-horizontal" role="form"  id="badge1">
+		<input name="_csrf" type="hidden" value="${_csrf.token}" />
+		<!-- ************************ START of Applicant Personal Information******************************* -->
+		<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="margin-top: 20px;">
+				<div class="panel panel-primary" >
+					<div class="panel-heading">
+						<h3 class="panel-title">STEP 1 - APPLICANT INFORMATION</h3>
+					</div>
+					<div class="panel-body ">
+					
+				
+		  <div class="panel panel-default" style="margin-left:10%;margin-right:10%;">
+      <div class="panel-heading customPanelHeading">Identity</div>
+      <div class="panel-body" >
+      
+      		<div class="form-group">
+					
+ 						<div class="col-sm-4 required"  ng-class="{ 'has-error' : myForm.lastName.$error.required}">
+								<label class=" control-label">Last Name <span></span></label>
+								<input text-only data-ng-model="PersonBioInfo.LastName" name="lastName" class="form-control" id="lastName" placeholder="Last Name" required/>
+				
+						</div>
+						<div  class="col-sm-4 required" ng-class="{ 'has-error' : myForm.firstName.$error.required}">
+							<label class=" control-label">First Name</label>
+							
+								<input text-only data-ng-model="PersonBioInfo.FirstName" name="firstName" class="form-control" id="firstName" placeholder="First Name" required/>
+
+						</div>
+						
+						<div class="col-sm-2">
+								<label for="inputEmail3" class=" control-label">Middle Name (No Initials)</label>
+									<input text-only data-ng-model="PersonBioInfo.MiddleName" class="form-control" id="middleName"	placeholder="Middle Name" />				
+							</div>				
+							<div class="col-sm-2">
+									<label class=" control-label">Suffix</label>					
+									<input  class="form-control" data-ng-model="PersonBioInfo.NameSuffixCode" id="suffix" placeholder="Suffix"/>	
+							</div>
+							
+						</div>
+    	
+			    
+					
+				  <div class="form-group">
+				  
+				  
+								<div class="col-sm-6 required"  ng-class="{ 'has-error' : myForm.ssn.$error.required || myForm.ssn.$invalid && !myForm.ssn.$pristine}">
+										<label class=" control-label">Social Security Number</label>
+								
+										
+										 <input class="form-control" type="text" data-ng-model="PersonBioInfo.SocialSecurityNumber" name="ssn" ui-mask="999-99-9999"  ui-mask-placeholder ui-mask-placeholder-char="_" required/>
+										 <p ng-show="myForm.ssn.$invalid && !myForm.ssn.$pristine" class="help-block">Enter a valid SSN</p> 
+														
+							</div>				
+							
+					</div>
+					
+					
+						<div class="form-group">
+						
+						 <div  class="col-sm-6 required"  ng-class="{ 'has-error' : myForm.dob.$error.required || myForm.dob.$invalid && !myForm.dob.$pristine }">
+							<label for="date"  class=" control-label">Date Of Birth (MM/DD/YYYY)</label>
+							
+								<input  class="form-control" data-ng-model="PersonBioInfo.DateOfBirth" id="dob" name="dob" placeholder="MM/DD/YYYY" type="date" required/>
+							 	<p ng-show="myForm.dob.$invalid && !myForm.dob.$pristine" class="help-block">Enter a valid date.</p> 
+							
+							</div>
+							
+							 <div   class="col-sm-6 required" ng-class="{ 'has-error' : myForm.citizenCountry.$error.required}">
+							<label class=" control-label">Country Of Citizenship</label>
+								<div class="">
+									<select class="form-control" name="citizenCountry" data-ng-model="PersonBioInfo.CountryCode_Citizenship"
+									      data-ng-options="country.countryCode as country.countryDescription for country in countryList" required>
+									     
+									   
+									</select>
+								</div>
+								</div>
+						</div>
+							
+						<div class="form-group">
+						
+							 <div  class="col-sm-6 required"  ng-class="{ 'has-error' : myForm.birthCountry.$error.required}">
+								<label class=" control-label">Country Of Birth</label>
+									
+										<select class="form-control" name="birthCountry" data-ng-model="PersonBioInfo.CountryCode_Birth" data-ng-options="country.countryCode as country.countryDescription for country in countryList" required>
+										</select>
+									
+							</div>
+							
+							 <div   class="col-sm-6 required" ng-class="{ 'has-error' : myForm.citizenCountry.$error.required}">
+								<label class=" control-label">State/City Of Birth</label>
+						
+								<input text-only data-ng-model="PersonBioInfo.CountrySubdivisionCode_Birth" class="form-control" id="cityBirth" placeholder="Birth City" required="required"/>
+							
+									</div>
+						</div>
+						<div class="form-group" style="padding-left:15px;padding-right:15px;">
+							<fieldset class="scheduler-border">
+								<legend class="scheduler-border"> Aliases 
+									 <span><button class="btn btn-primary" data-ng-click="addAlias()">Add</button> </span></legend>
+								 <div  class="col-sm-12 "  >
+										<table class="table">
+											<thead>
+												<tr>
+													<th>First Name</th>
+													<th>Last Name</th>
+													<th>Middle Name</th>
+													<th>Suffix</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+								</div>
+							</fieldset>
+						</div>
+					
+						
+    				</div>
+                     
+                </div><!-- End of Identity -->   
+					
+					
+				  <div class="panel panel-default" style="margin-left:10%;margin-right:10%;">
+				      <div class="panel-heading customPanelHeading">Contact Information</div>
+				      <div class="panel-body" >
+	      		
+				      	<div class="form-group">
+						 <div  class="col-sm-8 required" ng-class="{ 'has-error' : myForm.addressStreet.$error.required }">
+							<label class=" control-label">Home Address</label>
+							<input type="text" data-ng-model="PersonBioInfo.Address" name="addressStreet" class="form-control" id="addressStreet"	placeholder="Address" required/>
+						</div>
+						
+						 <div  class="col-sm-4 " >
+							<label class=" control-label">Apartment</label>
+							<input  data-ng-model="PersonBioInfo.ApartmentNumber" name="apt" class="form-control" id="apt"	placeholder="apartment" />	
+						</div>
+					
+						</div>
+					<div class="form-group">
+						<div class="col-sm-12" class="form-group">
+							<div class="col-sm-6 required" style="margin-left:-15px;"  ng-class="{ 'has-error' : myForm.addressCity.$error.required }">					
+								<label class=" control-label">City</label>
+									<input text-only data-ng-model="PersonBioInfo.City" class="form-control" id="addressCity" name="addressCity" placeholder="City" required="required" />
+							</div >
+							<div class="col-sm-2 required" data-ng-class="{ 'has-error' : myForm.addressState.$error.required }" >
+										<label class=" control-label">State</label>
+								<select class="form-control" placeholder="State" name="addressState" data-ng-model="PersonBioInfo.CountrySubdivisionCode" data-ng-options="state.countrySubdivisionCode as state.countrySubdivisionCode for state in stateList" required>
+									</select>
+							</div>
+								<div  class="col-sm-4" data-ng-class="{ 'has-error' : myForm.addressCity.$error.required }" >
+										<label style="margin-left:5%;" class=" control-label">Zip code</label>
+									<input style="margin-left:5%;" type="number" data-ng-model="PersonBioInfo.PostalCode" class="form-control" id="addressZip" name="addressZip"	placeholder="Zip code" required="required"/>
+							</div>
+								
+								
+										
+							
+						</div>
+						</div>
+						<div class="form-group">
+							 <div class="col-sm-6 required" ng-class="{ 'has-error' : myForm.email.$invalid && !myForm.email.$pristine || myForm.email.$error.required }">
+					            <label class=" control-label">Email Address</label>
+						            <input type="email" name="email" class="form-control" ng-model="PersonBioInfo.EmailAddress_Primary" required>
+						            <p ng-show="myForm.email.$invalid && !myForm.email.$pristine" class="help-block">Enter a valid email.</p>			        
+      						  </div>
+      						  
+   						  	 <div class="col-sm-6 ">
+					            <label class=" control-label">Alternate Email Address</label>
+						            <input type="email" name="email" class="form-control" ng-model="PersonBioInfo.EmailAddress_Secondary">
+						            		        
+      						  </div>
+						</div>
+				      
+						<div class="form-group">
+							<div class="col-sm-6 required" ng-class="{ 'has-error' : myForm.primaryPhone.$error.required }">
+								<label  class="control-label">Primary Phone</label>
+								<input class="form-control" type="text" name="primaryPhone" ng-model="PersonBioInfo.HomePhoneNumber" ui-mask="(999) 999-9999"  ui-mask-placeholder required/> 
+							</div>
+							
+							<div class="col-sm-6">
+								<label class="control-label">Secondary Phone</label>
+						
+								<input class="form-control" type="text" ng-model="PersonBioInfo.WorkPhoneNumber" ui-mask="(999) 999-9999"  ui-mask-placeholder ui-mask-placeholder-char="_"/>
+							</div>
+						</div>
+					
+				      
+				      </div>
+			      </div><!-- End of contact information -->
+			      
+	      		  <div class="panel panel-default" style="margin-left:10%;margin-right:10%;">
+				      <div class="panel-heading customPanelHeading" >Characteristics</div>
+				      <div class="panel-body" >
+					      			<div class="form-group">
+							<div class="col-sm-6"  >
+								<label class=" control-label">Height (In Feet)</label>
+								<div class="input-group">
+								    <input class="form-control" placeholder="feet" type="number" name="feet" data-ng-keyup="validateFeet(feet)" id="feet" data-ng-model="feet" style="width:50%;" /> 
+								    <input class="form-control" placeholder="inch" type="number" name="inch" id="inches" data-ng-keyup="validateInch(inch)" data-ng-model="inch"  style="width:50%;" /> 
+									<!-- <input class="form-control"  class="form-control" id="height" placeholder="Height" required="required" type="hidden"/> -->
+								</div>
+								</div>
+							<div class="col-sm-6 required"  ng-class="{ 'has-error' : myForm.weight.$error.required }">
+								<label class=" control-label">Weight (In LBS)</label>
+								<input  class="form-control" data-ng-keyup="validateWeight(PersonBioInfo.WeightInPounds)" data-ng-model="PersonBioInfo.WeightInPounds" name="weight" id="weight" placeholder="Weight" required type="number"  required/>
+							
+							</div>
+							</div>
+							
+								
+							<div class="form-group">
+								 <div class="col-sm-6 required" ng-class="{ 'has-error' : myForm.hairColor.$error.required}">
+									<label class=" control-label">Natural Hair Color</label>			
+										<select class="form-control" name="hairColor" data-ng-model="PersonBioInfo.HairColorCode" data-ng-options="hairColorObj.hairColorCode as hairColorObj.hairColorDescription for hairColorObj in hairColorList" required>
+										</select>
+									
+									</div>
+								 <div class="col-sm-6 required"  ng-class="{ 'has-error' : myForm.eyeColor.$error.required}">
+									<label class=" control-label">Natural Eye Color</label>
+	
+											<select class="form-control" name="eyeColor" data-ng-model="PersonBioInfo.EyeColorCode" data-ng-options="eyeColorObj.eyeColorCode as eyeColorObj.eyeColorDescription for eyeColorObj in eyeColorList" required>
+										</select>
+								
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-sm-6 required"  ng-class="{ 'has-error' : myForm.ethnicity.$error.required }">
+									<label class=" control-label">Ethnicity</label>
+								
+										<select class="form-control" data-ng-model="PersonBioInfo.RaceCode"
+										 data-ng-options="ethnicity.raceCode as ethnicity.raceDescription for ethnicity in ethnicityList"
+										  name="ethnicity" required></select>
+									
+								</div>
+								
+								<div class="col-sm-6 required"  ng-class="{ 'has-error' : myForm.genderName.$error.required }">
+									<label class=" control-label">Gender</label>
+									<select class="form-control" data-ng-model="PersonBioInfo.SexCode" 
+										data-ng-options="gender.sexCode as gender.sexDescription for gender in genderList" 
+										name="genderName" required></select>
+								</div>
+							
+							</div>
+				      
+				      </div>
+			      </div><!-- End of contact information -->
+			    <!--   <div>
+			      	<button class="btn-primary" data-ng-click="test()">test</button>
+			      </div> -->
+		      	  <div class="panel panel-default" style="margin-left:10%;margin-right:10%;">
+				      <div class="panel-heading customPanelHeading">Government Identification</div>
+				      <div class="panel-body" >
+				      
+				      <fieldset class="scheduler-border">
+   					 <legend class="scheduler-border">Primary ID</legend>
+		      			<div class="form-group">
+							 <div class="col-sm-6 required" ng-class="{ 'has-error' : myForm.primaryIdType.$error.required}">
+								<label class=" control-label">ID Type</label>
+						
+										<select class="form-control" data-ng-change="selectPrimaryId(primaryIdType)" name="primaryIdType" data-ng-model="primaryIdType" name="primaryIdType"
+											  data-ng-options="document.documentTypeCode as document.documentTypeDescription for document in documentList" required>
+										</select>
+							
+							</div>
+							<div class="col-sm-6 required" data-ng-show="PrimaryIdNoReqruied">
+								<label class=" control-label">ID#</label>
+							
+									<input  class="form-control" id="idNo" placeholder="Id #" data-ng-model="primaryIdNo" required="required"/>
+							
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-6" data-ng-show="PrimaryExpDate">
+								<label class=" control-label">Exp.Date (mm/dd/yyy)</label>
+								
+									<input  type="date" class="form-control" id="expDate" name="primaryExpDate" data-ng-model="primaryIdExpDate" placeholder="MM/DD/YYY" required="required"/> 
+								
+							</div>
+							<div class="col-sm-6" data-ng-show="PrimaryCountryRequired">
+								<label class=" control-label">Country</label>
+							
+									<select data-ng-disabled="PrimaryCountryDisabled" class="form-control" id="idCountry" placeholder="Country" data-ng-options="country.countryCode as country.countryDescription for country in countryList" data-ng-model="primaryCountry" required>
+									</select>
+								
+							</div>
+						</div>
+						<div class="form-group" data-ng-show="isPrimaryIdStateRequired">
+							<div class="col-sm-6">
+								<label class=" control-label">State</label>
+							
+								<select class="form-control" name="primaryState" data-ng-model="primaryState" data-ng-options=" state.countrySubdivisionCode for state in stateList" >
+										</select>
+							</div>
+						</div>
+						
+						</fieldset>
+						<fieldset  class="scheduler-border" data-ng-show="secondIdRequired">
+  						  <legend class="scheduler-border">Secondary ID</legend>
+							<div >
+							<div class="form-group">
+							 <div class="col-sm-6" ng-class="{ 'has-error' : myForm.secondaryIdType.$error.required}">
+									<label class=" control-label">Secondary ID Type</label>
+								
+											<select class="form-control" name="secondaryIdType" data-ng-model="secondaryIdType" name="secondaryIdType"
+												 data-ng-options="document.documentTypeCode as document.documentTypeDescription for document in secondaryDocumentList" >
+											</select>
+									
+								</div>
+								<div class="col-sm-6">
+								<label class=" control-label">ID#</label>
+								
+									<input  class="form-control" id="idNo" placeholder="Id #" data-ng-model="secondaryIdNo" />
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-sm-6">
+								<label class=" control-label">Exp.Date (mm/dd/yyy)</label>
+							
+									<input  type="date" class="form-control" id="expDate" name="secondaryExpiredDate" data-ng-model="secondaryIdExpDate" placeholder="MM/DD/YYY" /> 
+								</div>
+								<div class="col-sm-6">
+									<label class=" control-label">Country</label>
+									
+						
+									<select  class="form-control" id="secondaryCountry" placeholder="Country" data-ng-options="country.countryCode as country.countryDescription for country in countryList" data-ng-model="secondaryCountry" >
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-6">
+								<label class=" control-label">State</label>
+							
+									<select class="form-control" name="secondaryState" data-ng-model="secondaryState" data-ng-options="state.countrySubdivisionCode for state in stateList" >
+										</select>
+								</div>
+							</div>
+						</div>
+				      </fieldset>
+				      </div>
+			      </div><!-- End of Government Identification -->
+			
+						
+			
+					
+					
+					</div>
+				</div>
+			</div>
+		<!-- ************************ End of Applicant Personal Information******************************* -->
+
+		<div class="col-md-12" style="margin-top: 20px;">
+			<!-- Indicates a successful or positive action -->
+			<div style="margin-bottom: 5%; float: right;">
+				<button type="reset" class="btn btn-danger btn-lg"> Cancel </button>
+			<!-- 	<button type="button" 
+					data-ng-disabled="myForm.$invalid"
+				 data-ng-click="next(myForm)" class="btn btn-success btn-lg"> Next </button>
+		 -->
+		 	<button type="button" 
+					
+				 data-ng-click="next(myForm)" class="btn btn-success btn-lg"> Next </button>
+		
+		 	</div>			
+		</div>
+
+	</form>
+		
+</div>

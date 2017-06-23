@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h1 ><strong>Please review form of applicant ${applicantFirstName} ${applicantLastName} </strong></h1>
+        <p>
+            Dear ${signerName}, <br />
+            We have received a form completion from applicant ${applicantFirstName} ${applicantLastName}, please review the form.
+        </p>
+        <p>
+            Best regards,<br />
+            The Team
+        </p>
+    </body>
+</html>

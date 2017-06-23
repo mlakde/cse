@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <h1 style=" "><strong>Please fill your online electronic form</strong></h1>
+        <p>
+            Dear ${applicantFirstName} ${applicantLastName}, <br />
+            Here is your info: <br />
+            Company : ${company}<br />
+            Last 4 SSN: ${ssn}<br />
+            Email : ${email}<br />
+            		     		 
+            To access your form, click on the link below or Copy and Paste the URL into your browser.<br />
+            The link will be valid in the next 30 days.
+        </p>
+        <p>
+          Token URL:  <a href="${link}">${link}</a>
+        </p>
+        <p>
+            Best regards,<br />
+            The Team
+        </p>
+    </body>
+</html>

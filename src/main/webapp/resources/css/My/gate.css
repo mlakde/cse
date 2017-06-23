@@ -1,0 +1,88 @@
+	body{
+		background-color:2B3990;
+		width:95%;
+		font-family: arial;
+		height: 95%;
+		overflow-y:hidden !important;
+		background-image: url(/QFlowDashBoard/resources/images/gate_screen_background_v4.png); 
+		background-repeat: no-repeat;
+		background-size: cover;
+		
+	}
+	.img-size{
+
+	background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 40%, rgba(226,226,226,1) 80%, lightgray 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 40%,rgba(226,226,226,1) 80%,lightgray 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 40%,rgba(226,226,226,1) 80%,lightgray 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
+		
+	}
+
+	.flightNo{
+		text-align:center;
+	}
+	.cell-bg{
+		background-color: 2B3990;
+		color:white;
+		font-size:1.5em;
+	}
+	#gateview th {
+		text-align:center;
+		background-color:6C95CE;
+	 }
+	 .date-font{
+	 	font-size:4em;
+	 	color:white;
+	 }
+	 .flight-font{
+	  	font-size:5.5em;
+	 	color:white;
+	 }
+	 .linepadd{
+	 	height: 1%;
+	 }
+	 div img#noFlightImg{
+	 	vertical-align:middle;
+	 	display:block;margin:auto;
+	 	
+	 }
+	 .flight-label{
+		 font-size:4em;
+		  color:#4d4d4d;
+		  font-family: neosans-bold;
+	 }
+	 .test{
+
+	 }
+	 .dispBox{
+	 	height:50%;
+	 	width:100%;
+	 	background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(234,234,234,1) 80%, rgba(247,247,247,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(234,234,234,1) 80%,rgba(247,247,247,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 50%,rgba(234,234,234,1) 80%,rgba(247,247,247,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f7f7f7',GradientType=0 ); /* IE6-9 */
+	 	color:black;
+	 	border-radius:50px;
+	 	text-align:center;
+	 	vertical-align:middle;
+	 }
+	 .flight-content{
+	 	 font-size:5.3em;
+		  color:black;
+		  margin-top:25px;
+		  font-family: neosans-bold;	
+	 }
+	 .padding-dispBox{
+	 	padding-left:50px;
+	 	padding-right:50px;
+	 }
+	 .clock{
+	  	 font-size:5em;
+		  color:#404452;
+		 /*  margin-top:10px; */
+		 margin-top:-30px;
+		 padding-bottom:20px;
+		 font-family: neosans-bold;
+	 }
